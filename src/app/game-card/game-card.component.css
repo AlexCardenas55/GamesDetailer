@@ -1,0 +1,11 @@
+.panelcard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+.card{
+    margin: 2rem 5rem 2rem;
+}
