@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GamedetailsService } from '../services/gamedetails.service';
+import { Platforms } from './platforms_Interface';
 @Component({
   selector: 'app-platform-dropdown',
   templateUrl: './platform-dropdown.component.html',
@@ -7,18 +7,23 @@ import { GamedetailsService } from '../services/gamedetails.service';
 })
 export class PlatformDropdownComponent implements OnInit {
   selectedPlatform: any;
-  constructor(private GamesService: GamedetailsService){}
-
+  platforms: Platforms[];
+  constructor() { 
+    this.platforms=[
+      {name: 'All', code: 1},
+      {name: 'PC', code: 2},
+      {name: 'Xbox', code: 3},
+      {name: 'Play Station', code: 4},
+      {name: 'Mac', code: 5},
+    ]
+  }
   ngOnInit(): void {
   }
 
-  platforms = this.GamesService.platforms;
-  
   onChange() {
-    this.GamesService.selectedPlatform = this.selectedPlatform;
+    localStorage.setItem("platform",this.selectedPlatform.code)
+    // console.log(this.selectedPlatform);
   }
-
-
 
 }
 
