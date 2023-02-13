@@ -1,10 +1,8 @@
 <div class="panelcard">
-<p-card class="card" *ngFor="let game of gameDetails" header={{game.title}} subheader={{game.genre}} [style]="{width: '360px', height: '360px'}" styleClass="p-card-shadow">
+<p-card class="card" *ngFor="let game of gameDetails" header={{game.title}} subheader={{game.genre}} [style]="{width: '300px', height: '500px'}" styleClass="p-card-shadow">
     <ng-template pTemplate="header">
+        <img alt="Card" [src]= game.thumbnail>
     </ng-template>
     <p>{{game.short_description}}</p>
-    <ng-template pTemplate="footer">
-        <p-button (onClick)="onClick()" label="Learn More" icon="pi pi-check"></p-button>
-    </ng-template>
 </p-card>
 </div>

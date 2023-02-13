@@ -8,4 +8,10 @@
 
 .card{
     margin: 2rem 5rem 2rem;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: transform .2s;
 }
